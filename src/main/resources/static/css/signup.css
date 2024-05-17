@@ -106,6 +106,9 @@ span {
 	cursor: pointer;
 }
 
+.error-message {
+	color:crimson
+}
 
 
 h1 {
