@@ -32,13 +32,6 @@ public class SignUpController {
     private final SignupService signupService;
 	
 	private final MessageSource messageSource;
-	
-    
-    @GetMapping(UrlConst.MENU)
-    public String displaytop() {
-    	
-        return "menu";
-    }
     
     /**
      * ユーザー新規登録画面を表示

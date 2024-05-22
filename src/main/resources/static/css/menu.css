@@ -30,8 +30,8 @@ span {
 
 }
 
-.login-btn {
-	width: 152px;
+.logout-btn {
+    width: 152px;
 	height: 53px;
 	padding: 16px 40px 16px 40px;
 	gap: 0px;
@@ -40,16 +40,14 @@ span {
 	background: rgba(255, 255, 255, 1);
 	border: none;
 	cursor: pointer;
-
-}
+} 
 
 .footer {
 	width: 100%;
+	position: fixed;
 	bottom: 0;
 	left: 0;
 	color: rgba(255, 255, 255, 1);
-	position: absolute;
-    bottom: 0; /*下に固定*/
 }
 
 .footerlogo {
@@ -67,60 +65,13 @@ span {
 
 }
 
-.container {
-	margin: 0 auto;
-	width: 480px;
-	
-}
-
-.form-control {
-	border: 1px solid #5b5b5b;
-	border-top: none;
-	border-left: none;
-	border-right: none;
-	display: block;
-	width: 100%;
-	padding: 10px 0;
-	outline: none;
-}
-
-
-.form-group {
-	width:480px;
-	display: inline-block;
-	margin-bottom: 35px;
-	position: relative;
-	overflow: auto;
-}
-
-.text-center {
-	padding: 10px 0;
-	text-align: center;
-}
-
-.signinbtn {
-	width:232px;
-	height: 53px;
-	padding: 16px 80px 16px 80px;
-	border-radius: 4px 4px 4px 4px;
-	background: rgba(27, 86, 120, 1);	
-	color: rgba(255, 255, 255, 1);
-	font-size: 16qx;
-	cursor: pointer;
-	border: none;
-}
-
-.error-message {
-	color:crimson
-}
-
-
 h1 {
-	font-family: Roboto;
-	font-size: 36px;
-	font-weight: 400;
-	text-align: center;
-
+    width: 144px;
+	height: 48px;
+	top: 200px;
+	left: 648px;
+	gap: 0px;
+	opacity: 0px;
 }
 
 h2 {
@@ -135,7 +86,5 @@ h2 {
 
 body {
 	margin: 0;
-	overflow-y: scroll;
+	min-height: 100vh;
 }
-
-

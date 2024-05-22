@@ -9,6 +9,13 @@
             (email, name, password, created_at, updated_at)
         VALUES
             (#{email}, #{name}, #{password},CURRENT_TIMESTAMP,  CURRENT_TIMESTAMP)
-    </insert>
+ </insert>
+    
+ <select id="findByName" parameterType="String" 
+ resultType="com.example.demo.entity.UserInfo">
+  SELECT id, email, password
+  FROM users
+  WHERE email = #{email}
+</select>
     
    </mapper>

@@ -1,17 +1,23 @@
 package com.example.demo.entity;
+
 import java.io.Serializable;
 
 import java.util.Date;
 
-import lombok.AllArgsConstructor;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
 import lombok.Data;
 
 //ユーザー情報 Entity
+@Entity
 @Data
-@AllArgsConstructor
+@Table(name="users")
 public class UserInfo implements Serializable{
 	
 	//ID
+	@Id
     private Long id;
 
     //メールアドレス
@@ -30,8 +36,7 @@ public class UserInfo implements Serializable{
     private Date created_at;
 
     //更新日時
-    private Date updated_at;
-    
+    private Date updated_at;    
 
 }
 

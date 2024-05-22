@@ -8,5 +8,5 @@ public class UrlConst {
 	
 	public static final String SIGNUP = "/signup";
 	
-	public static final String NO_AUTHENTICATION[] = {LOGIN,SIGNUP,MENU};
+	public static final String[] NO_AUTHENTICATION = {LOGIN,SIGNUP};
 }

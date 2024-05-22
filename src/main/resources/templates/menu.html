@@ -1,12 +1,52 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>トップメニュー</title>
-</head>
-<body>
-トップメニュー
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>TOPメニュー</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link th:href="@{/css/menu.css}" rel="stylesheet" />
+	</head>
 	
-</form>
+<body>
+	
+	<header>
+		<div class="header">
+			<div class="header-container">
+				<div><span>My PortFolio</span></div>
+				<div>
+					<button onclick="location.href='login'" class="logout-btn">ログアウト</button>
+				</div>
+			</div>
+		</div>
+	</header>
+	
+	<div class="main">
+	        <div class="profile">
+	        	<h1>自己紹介</h1><br>
+	            <textarea></textarea><br>
+	            <button type="button">自己紹介を編集する</button><br>
+			</div>
+	
+			<div class="charttitle">
+	            <h2>学習チャート</h2><br>
+	            <button type="button">編集する</button>
+			</div>
+	 </div>
+	
+	 <div class="topchart">
+	
+	 </div>
+    
 </body>
+
+<footer>
+	<div class="footer">
+		<div class="footerlogo">portfolio site</div>
+	</div>
+</footer>
+
 </html>
+16:29
+
+
+
+Enterで送信
