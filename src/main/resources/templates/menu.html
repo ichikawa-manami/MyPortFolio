@@ -12,9 +12,13 @@
 		<div class="header">
 			<div class="header-container">
 				<div><span>My PortFolio</span></div>
+				
 				<div>
-					<button onclick="location.href='login'" class="logout-btn">ログアウト</button>
+					<form th:action="@{/logout}" method="post">
+						<input type="submit" class="logout-btn" value="ログアウト">
+					</form>
 				</div>
+				
 			</div>
 		</div>
 	</header>
