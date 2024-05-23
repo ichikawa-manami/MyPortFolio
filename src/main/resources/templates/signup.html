@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 	<head>
-		<title th:text="${title}"></title>
+		<title>新規登録画面</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<link th:href="@{/css/signup.css}" rel="stylesheet" />
 	</head>
@@ -42,7 +42,7 @@
             
 			<div class="form-group">
                 <label>パスワード</label>
-                <input type="text" th:field="*{password}" class="form-control">
+                <input type="password" th:field="*{password}" class="form-control">
 				<div th:if="${#fields.hasErrors('password')}" class="error-message">
 				<p th:each="error : ${#fields.errors('password')}" th:text="${error}"></p>
 				</div>

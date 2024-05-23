@@ -2,7 +2,6 @@ package com.example.demo.dto;
 
 import java.io.Serializable;
 
-
 import org.hibernate.validator.constraints.Length;
 
 

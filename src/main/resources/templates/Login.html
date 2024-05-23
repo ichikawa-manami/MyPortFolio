@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+	
+  <head>
+    <title>ログイン画面</title>
+    <meta http-equiv="Content-Type" 
+      content="text/html; charset=UTF-8" />
+	  <link th:href="@{/css/login.css}" rel="stylesheet" />
+  </head>
+  
+  <body>
+	
+	<header>
+			<div class="header">
+				<div class="header-container"><div>My PortFolio</div>
+			</div>
+	</header>
+	
+	<div class="container">
+			
+    <h1>ログイン</h1>
+	<div th:if="${param.error}" class="error-message">
+		メールアドレス、もしくはパスワードが間違っています</div>
+    <p th:text="${msg}"></p>
+	
+    <form th:action="@{/login}" method="post" th:object="${loginForm}">
+		
+      <div class="mb-3">
+        <label class="form-label">メールアドレス</label>
+        <input type="text" th:field="*{email}" name="email"
+            class="form-control" />
+      </div>
+	  
+      <div class="mb-3">
+        <label class="form-label">パスワード</label>
+        <input type="password" 		th:field="*{password}" name="password"
+            class="form-control" />
+      </div>
+
+	  
+      <div class="text-center">
+        <input type="submit" value="ログインする"
+            class="btn-primary" />
+      </div>
+	  
+	  </form>
+	  
+	  <div class="text-center">
+	     <input type="submit" onclick="location.href='signup'" value="新規登録する"
+	     	        class="btn-primary" />
+	   </div>
+	 
+	 </div>
+	  
+   
+   
+   
+	
+  </body>
+  
+  <footer>
+  		<div class="footer">
+  			<div class="footerlogo">portfolio site</div>
+  		</div>
+  	</footer>
+	
+</html>

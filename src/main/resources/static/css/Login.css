@@ -1,50 +1,29 @@
 @charset "UTF-8";
-
 .header {
-	width: 100%;
 	background: rgba(27, 86, 120, 1);
-
+	width: 100%;
+    position: fixed;
+    top: 0; /* 上下の固定位置を上から0pxにする */
+    left: 0; /* 左右の固定位置を左から0pxにする */
 }
 
 .header-container {
-	max-width: 1440px;
+	width: 100%;
 	height: 120px;
 	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	margin :auto;
-}
-
-span {
-	width: 201px;
-	height: 42px;
-	gap: 0px;
-	opacity: 0px;
-
+	justify-content: center;
+	background: rgba(27, 86, 120, 1);
 	font-family: Roboto;
 	font-size: 36px;
 	font-weight: 700;
 	line-height: 42.19px;
-	text-align: left;
+	align-items: center;
 	color: rgba(255, 255, 255, 1);
-
 }
 
-.login-btn {
-	width: 152px;
-	height: 53px;
-	padding: 16px 40px 16px 40px;
-	gap: 0px;
-	border-radius: 4px 4px 4px 4px;
-	opacity: 0px;
-	background: rgba(255, 255, 255, 1);
-	border: none;
-	cursor: pointer;
-
-}
 
 .footer {
-    width: 100%;
+	width: 100%;
 	position: fixed;
 	bottom: 0;
 	left: 0;
@@ -69,6 +48,7 @@ span {
 .container {
 	margin: 0 auto;
 	width: 480px;
+	margin-top: 80px;
 	margin-bottom: 100px;
 }
 
@@ -84,12 +64,11 @@ span {
 }
 
 
-.form-group {
+.mb-3 {
 	width:480px;
 	display: inline-block;
-	margin-bottom: 35px;
+	margin-bottom: 40px;
 	position: relative;
-	overflow: auto;
 }
 
 .text-center {
@@ -97,7 +76,7 @@ span {
 	text-align: center;
 }
 
-.signinbtn {
+.btn-primary {
 	width:232px;
 	height: 53px;
 	padding: 16px 80px 16px 80px;
@@ -109,9 +88,6 @@ span {
 	border: none;
 }
 
-.error-message {
-	color:crimson
-}
 
 
 h1 {
@@ -133,8 +109,9 @@ h2 {
 }
 
 body {
-	margin: 0;
-	overflow-y: scroll;
+    padding-top: 200px; /* ヘッダーの後ろに要素が隠れないようにするため */
 }
 
-
+.error-message {
+	color:crimson
+}
