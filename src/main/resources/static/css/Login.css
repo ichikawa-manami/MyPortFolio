@@ -1,8 +1,10 @@
 @charset "UTF-8";
 .header {
 	background: rgba(27, 86, 120, 1);
-	margin: 0px;
-    padding: 0px;
+	width: 100%;
+    position: fixed;
+    top: 0; /* 上下の固定位置を上から0pxにする */
+    left: 0; /* 左右の固定位置を左から0pxにする */
 }
 
 .header-container {
@@ -47,6 +49,7 @@
 	margin: 0 auto;
 	width: 480px;
 	margin-top: 80px;
+	margin-bottom: 100px;
 }
 
 .form-control {
@@ -106,7 +109,7 @@ h2 {
 }
 
 body {
-	margin: 0;
+    padding-top: 200px; /* ヘッダーの後ろに要素が隠れないようにするため */
 }
 
 .error-message {

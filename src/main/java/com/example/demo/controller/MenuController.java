@@ -19,4 +19,5 @@ public class MenuController {
 	public String menu() {
 		return "nemu";
 	}
+
 }

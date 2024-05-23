@@ -1,9 +1,11 @@
 @charset "UTF-8";
 
 .header {
-	width: 100%;
 	background: rgba(27, 86, 120, 1);
-
+	width: 100%;
+    position: fixed;
+    top: 0; /* 上下の固定位置を上から0pxにする */
+    left: 0; /* 左右の固定位置を左から0pxにする */
 }
 
 .header-container {
@@ -12,7 +14,6 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	margin :auto;
 }
 
 span {
@@ -85,6 +86,5 @@ h2 {
 }
 
 body {
-	margin: 0;
-	min-height: 100vh;
+    padding-top: 200px; /* ヘッダーの後ろに要素が隠れないようにするため */
 }
