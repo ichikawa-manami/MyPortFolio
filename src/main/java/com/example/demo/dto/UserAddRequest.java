@@ -33,7 +33,4 @@ public class UserAddRequest implements Serializable{
     @Pattern(regexp = "^(([a-zA-Z0-9])+([a-zA-Z0-9\\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\\._-]+)+)*$", 
     message = "メールアドレスが正しい形式ではありません")
     private String email;
-	
-    @Size(min = 50,max = 200, message = "50文字以上、200文字以下で入力してください")
-    private String self_introduction;
 }
