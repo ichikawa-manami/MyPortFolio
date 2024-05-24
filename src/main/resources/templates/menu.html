@@ -12,27 +12,34 @@
 		<div class="header">
 			<div class="header-container">
 				<div><span>My PortFolio</span></div>
-				
 				<div>
-					<form th:action="@{/logout}" method="post">
+					<form th:action="@{logout}" method="post">
 						<input type="submit" class="logout-btn" value="ログアウト">
 					</form>
 				</div>
-				
 			</div>
 		</div>
 	</header>
 	
 	<div class="main">
 	        <div class="profile">
-	        	<h1>自己紹介</h1><br>
-	            <textarea></textarea><br>
-	            <button type="button">自己紹介を編集する</button><br>
-			</div>
+				<div class="pfimage">
+					<img th:src="@{/img/104622.jpg}"><br>
+					<div th:text="${userName}" class="name"></div>
+				 </div>
+				 
+                <div class="profilecontent">
+	        		<h1>自己紹介</h1><br>
+	        
+						<input type="submit" value="自己紹介を編集する" class="sieditbtn" />
+					</form>
+	            	
+				</div>
+				</div>
 	
 			<div class="charttitle">
 	            <h2>学習チャート</h2><br>
-	            <button type="button">編集する</button>
+	            <button class="charteditbtn" type="button">編集する</button>
 			</div>
 	 </div>
 	

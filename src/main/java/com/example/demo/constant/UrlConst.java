@@ -1,5 +1,5 @@
 package com.example.demo.constant;
-
+;
 public class UrlConst {
 
 	public static final String LOGIN = "/login";

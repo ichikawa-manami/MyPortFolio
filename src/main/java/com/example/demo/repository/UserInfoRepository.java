@@ -14,5 +14,7 @@ public interface UserInfoRepository extends JpaRepository<UserInfo, Long>{
 
 	  @Select("select * from users where email = #{email}")
     Optional<UserInfo> findByEmail(String email);
-
+	  
+	Optional<UserInfo> findByName(String name);
+	
 }

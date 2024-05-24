@@ -2,8 +2,6 @@ package com.example.demo.authentication;
 
 import org.springframework.security.core.userdetails.User;
 
-
-
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -26,10 +24,16 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		UserInfo userInfo = repository.findByEmail(email)
 				.orElseThrow(()-> new UsernameNotFoundException
 						("User not found with email: " + email));
+		
+
 				
 	return User.builder()
 	.username(userInfo.getEmail())
 	.password(userInfo.getPassword())
+	.username(userInfo.getName())
+    .roles("USER")
 	.build();
 	}
+	
+	
 }
