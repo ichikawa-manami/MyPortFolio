@@ -13,9 +13,9 @@
     
  <select id="findByName" parameterType="String" 
  resultType="com.example.demo.entity.UserInfo">
-  SELECT id, email, password
-  FROM users
-  WHERE email = #{email}
+		  SELECT id, email, password
+		  FROM users
+		  WHERE email = #{email}
 </select>
     
    </mapper>

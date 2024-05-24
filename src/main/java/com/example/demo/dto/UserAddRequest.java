@@ -2,6 +2,7 @@ package com.example.demo.dto;
 
 import java.io.Serializable;
 
+
 import org.hibernate.validator.constraints.Length;
 
 
@@ -33,4 +34,6 @@ public class UserAddRequest implements Serializable{
     message = "メールアドレスが正しい形式ではありません")
     private String email;
 	
+    @Size(min = 50,max = 200, message = "50文字以上、200文字以下で入力してください")
+    private String self_introduction;
 }
