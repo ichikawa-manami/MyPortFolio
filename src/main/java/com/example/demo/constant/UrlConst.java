@@ -10,6 +10,8 @@ public class UrlConst {
 	
 	public static final String S_I_EDIT = "/introedit";
 	
+	public static final String CHARTLIST = "/listview";
+	
 	public static final String[] NO_AUTHENTICATION = {LOGIN,SIGNUP};
 }
 ;

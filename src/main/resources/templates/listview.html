@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>項目一覧画面</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link th:href="@{/css/listview.css}" rel="stylesheet" />
+	</head>
+	
+<body>
+	
+	<header>
+		<div class="header">
+			<div class="header-container">
+				<div><span>My PortFolio</span></div>
+				<div>
+					<form th:action="@{logout}" method="post">
+						<input type="submit" class="logout-btn" value="ログアウト">
+					</form>
+				</div>
+			</div>
+		</div>
+	</header>
+	
+<div class="wrapper">
+        
+	<div class="category">
+		<div class="content">
+			
+				<div class="table-header">
+							
+					<div class="title"><h1>バックエンド</h1>
+					</div>
+							
+					<input type="submit" value="項目を追加する" class="addbtn">
+				</div>
+
+				</div>
+				
+				<div class="container">
+					<div class="table-title">
+						<h2>項目名</h2>
+						<h3>学習時間</h3>
+					</div>
+					
+					<div class="table">
+						<div class="skillname">
+							<h2>Ruby</h2>
+						</div>
+						
+							<div class="time">
+								<input type="number" value="0" min="0" max="60" step="1">
+							</div>
+							
+							<div class="save">
+								<input type="submit" value="学習時間を保存する" class="btn-save">
+							</div>
+								
+							<div class="delete">
+								<input type="submit" value="削除する" class="btn-delete">
+							</div>
+					</div>
+					
+					<div class="table">
+						<div class="skillname">
+							<h2>Rails</h2>
+						</div>
+												
+							<div class="time">
+								<input type="number" value="0" min="0" max="60" step="1">
+							</div>
+													
+							<div class="save">
+								<input type="submit" value="学習時間を保存する" class="btn-save">
+							</div>
+								
+							<div class="delete">
+								<input type="submit" value="削除する" class="btn-delete">
+							</div>
+					</div>
+					
+					<div class="table">
+							<div class="skillname">
+								<h2>MySQL</h2>
+							</div>
+													
+							<div class="time">
+								<input type="number" value="0" min="0" max="60" step="1">
+							</div>
+													
+							<div class="save">
+								<input type="submit" value="学習時間を保存する" class="btn-save">
+							</div>
+								
+							<div class="delete">
+								<input type="submit" value="削除する" class="btn-delete">
+							</div>
+					</div>
+					
+				</div>
+	</div>
+	
+	<div class="category">
+			<div class="content">
+				
+					<div class="table-header">
+								
+						<div class="title"><h1>フロントエンド</h1>
+						</div>
+								
+						<input type="submit" value="項目を追加する" class="addbtn">
+					</div>
+	
+					</div>
+					
+					<div class="container2">
+						<div class="table-title">
+							<h2>項目名</h2>
+							<h3>学習時間</h3>
+						</div>
+						
+						<div class="table">
+							<div class="skillname">
+								<h2>HTML</h2>
+							</div>
+							
+								<div class="time">
+									<input type="number" value="0" min="0" max="60" step="1">
+								</div>
+								
+								<div class="save">
+									<input type="submit" value="学習時間を保存する" class="btn-save">
+								</div>
+									
+								<div class="delete">
+									<input type="submit" value="削除する" class="btn-delete">
+								</div>
+						</div>
+						
+						<div class="table">
+							<div class="skillname">
+								<h2>CSS</h2>
+							</div>
+													
+								<div class="time">
+									<input type="number" value="0" min="0" max="60" step="1">
+								</div>
+														
+								<div class="save">
+									<input type="submit" value="学習時間を保存する" class="btn-save">
+								</div>
+									
+								<div class="delete">
+									<input type="submit" value="削除する" class="btn-delete">
+								</div>
+						</div>
+						
+					</div>
+		</div>
+		
+		<div class="category">
+				<div class="content">
+					
+						<div class="table-header">
+									
+							<div class="title"><h1>インフラ</h1>
+							</div>
+									
+							<input type="submit" value="項目を追加する" class="addbtn">
+						</div>
+		
+						</div>
+						
+						<div class="container">
+							<div class="table-title">
+								<h2>項目名</h2>
+								<h3>学習時間</h3>
+							</div>
+							
+							<div class="table">
+								<div class="skillname">
+									<h2>Heroku</h2>
+								</div>
+								
+									<div class="time">
+										<input type="number" value="0" min="0" max="60" step="1">
+									</div>
+									
+									<div class="save">
+										<input type="submit" value="学習時間を保存する" class="btn-save">
+									</div>
+										
+									<div class="delete">
+										<input type="submit" value="削除する" class="btn-delete">
+									</div>
+							</div>
+							
+							<div class="table">
+								<div class="skillname">
+									<h2>AWS</h2>
+								</div>
+														
+									<div class="time">
+										<input type="number" value="0" min="0" max="60" step="1">
+									</div>
+															
+									<div class="save">
+										<input type="submit" value="学習時間を保存する" class="btn-save">
+									</div>
+										
+									<div class="delete">
+										<input type="submit" value="削除する" class="btn-delete">
+									</div>
+							</div>
+							
+							<div class="table">
+									<div class="skillname">
+										<h2>Firebase</h2>
+									</div>
+															
+									<div class="time">
+										<input type="number" value="0" min="0" max="60" step="1">
+									</div>
+															
+									<div class="save">
+										<input type="submit" value="学習時間を保存する" class="btn-save">
+									</div>
+										
+									<div class="delete">
+										<input type="submit" value="削除する" class="btn-delete">
+									</div>
+							</div>
+							
+						</div>
+			</div>
+		
+</div>
+        
+</div>	
+	
+</body>
+
+
+<footer>
+	<div class="footer">
+		<div class="footerlogo">portfolio site</div>
+	</div>
+</footer>
+
+</html>
