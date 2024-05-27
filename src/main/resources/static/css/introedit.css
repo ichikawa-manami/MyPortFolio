@@ -1,0 +1,161 @@
+@charset "UTF-8";
+
+.header {
+	width: 100%;
+	background: rgba(27, 86, 120, 1);
+
+}
+
+.header-container {
+	max-width: 1440px;
+	height: 120px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin :auto;
+}
+
+span {
+	width: 201px;
+	height: 42px;
+	gap: 0px;
+	opacity: 0px;
+
+	font-family: Roboto;
+	font-size: 36px;
+	font-weight: 700;
+	line-height: 42.19px;
+	text-align: left;
+	color: rgba(255, 255, 255, 1);
+
+}
+
+.logout-btn {
+	width: 152px;
+	height: 53px;
+	padding: 16px 40px 16px 40px;
+	gap: 0px;
+	border-radius: 4px 4px 4px 4px;
+	opacity: 0px;
+	background: rgba(255, 255, 255, 1);
+	border: none;
+	cursor: pointer;
+}
+
+.footer {
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	color: rgba(255, 255, 255, 1);
+	position: fixed;
+    bottom: 0; /*下に固定*/
+}
+
+.footerlogo {
+	width: 100%;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	background: rgba(27, 86, 120, 1);
+	font-family: Roboto;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 21.09px;
+	align-items: center;
+	color: rgba(255, 255, 255, 1);
+
+}
+
+.container {
+	margin: 0 auto;
+	width: 480px;
+	align-items: center;
+}
+
+.form {
+	align-items: center;
+}
+
+.textarea {
+	width: 480px;
+	height: 145px;
+	border: none;
+
+    /* 右下の//(サイズ変更機能)を消す */
+    resize: none;
+
+    /* フォーカスした際の青い枠線を消す */
+    outline: none;
+
+    /* widthを100%にしておくことで、レスポンシブ対応ができます。 */
+    width: 100%;
+    border-bottom: 2px solid #999;
+}
+
+.imgup {
+	margin-top: 50px;
+	align-items: center;
+}
+
+.editform {
+	width: 480px;
+	border: none;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	display: block;
+	width: 100%;
+	padding: 10px 0;
+	outline: none;
+	
+}
+
+.commit {
+	text-align: center;
+	margin-bottom: 90px;
+}
+
+.commitbtn {
+	width:322px;
+	height: 53px;
+	border-radius: 4px 4px 4px 4px;
+	background: rgba(27, 86, 120, 1);	
+	color: rgba(255, 255, 255, 1);
+	font-size: 18px;
+	font-family: Roboto;
+	cursor: pointer;
+	border: none;
+	white-space: nowrap;
+	text-align: center;
+	margin-top: 30px;
+}
+
+
+
+h1 {
+	font-family: Roboto;
+	font-size: 36px;
+	font-weight: 400;
+	text-align: center;
+	margin-top: 60px;
+
+}
+
+h2 {
+	font-size: 10px;
+    color: #0000008A;
+}
+
+h4 {
+	font-size: 10px;
+    color: #0000008A;
+}
+
+body {
+	margin: 0;
+	overflow-y: scroll;
+}
+
+.error-message {
+	color:crimson
+}

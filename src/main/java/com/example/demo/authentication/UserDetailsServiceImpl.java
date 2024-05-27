@@ -1,5 +1,10 @@
 package com.example.demo.authentication;
 
+import java.util.Collection;
+import java.util.Collections;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 
 import org.springframework.security.core.userdetails.UserDetails;
@@ -25,15 +30,21 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 				.orElseThrow(()-> new UsernameNotFoundException
 						("User not found with email: " + email));
 		
-
+		Collection<? extends GrantedAuthority> authorities =
+		Collections.singletonList(new SimpleGrantedAuthority("USER"));
+	    return new CustomUserDetails
+	    		(userInfo.getEmail(), userInfo.getPassword(), authorities,
+	    				userInfo.getName(),userInfo.getId(), userInfo.getSelf_introduction());
 				
-	return User.builder()
+	 /**
+	return User.builder()/
 	.username(userInfo.getEmail())
 	.password(userInfo.getPassword())
 	.username(userInfo.getName())
     .roles("USER")
 	.build();
 	}
+	**/
 	
-	
+}
 }
