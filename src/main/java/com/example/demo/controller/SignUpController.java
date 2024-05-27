@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.example.demo.authentication.CustomUserDetails;
 import com.example.demo.authentication.UserDetailsServiceImpl;
 import com.example.demo.constant.UrlConst;
 import com.example.demo.dto.UserAddRequest;
@@ -75,11 +76,13 @@ public class SignUpController {
             UserDetails userDetails = userDetailsServiceImpl.loadUserByUsername(userRequest.getEmail());
             UsernamePasswordAuthenticationToken authToken =
                     new UsernamePasswordAuthenticationToken(userDetails, userRequest.getPassword(), userDetails.getAuthorities());
-            Authentication authentication = authenticationManager.authenticate(authToken);
-            SecurityContextHolder.getContext().setAuthentication(authentication);
+            Authentication auth = authenticationManager.authenticate(authToken);
+            SecurityContextHolder.getContext().setAuthentication(auth);
         } catch (Exception e) {
+        	
             return "menu";
         }
+        
         return "redirect:/menu"; // トップ画面へ遷移するように変更
     }
    

@@ -17,5 +17,11 @@
 		  FROM users
 		  WHERE email = #{email}
 </select>
+
+<update id="edit">
+			UPDATE users
+		    SET self_introduction = #{self_introduction}
+		    WHERE id = #{id}
+</update>
     
    </mapper>
