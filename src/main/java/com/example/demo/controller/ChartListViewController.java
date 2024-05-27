@@ -21,4 +21,9 @@ public class ChartListViewController {
 		
 		return "listview";
 	}
+	
+	@GetMapping("listadd")
+	public String listaddview() {
+		return "listadd";
+	}
 }

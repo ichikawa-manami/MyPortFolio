@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>項目追加画面</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link th:href="@{/css/listadd.css}" rel="stylesheet" />
+	</head>
+	
+<body>
+	
+	<header>
+		<div class="header">
+			<div class="header-container">
+				<div><span>My PortFolio</span></div>
+				<div>
+					<form th:action="@{logout}" method="post">
+						<input type="submit" class="logout-btn" value="ログアウト">
+					</form>
+				</div>
+			</div>
+		</div>
+	</header>
+	
+<div class="container">
+        
+     <h1>{カテゴリー名}に項目を追加</h1>
+	<div class="form">
+			<!--<form th:action="@{/introedit}" th:object="${introEditRequest}" th:method="post"> 
+						<input type="hidden" name="id" th:value="${id}">-->
+			
+				<div class="addform">
+					
+					<div class="form-group">
+		                <label>項目名</label>
+						<input type="text" class="form-control">
+<!--		                <input type="text" th:field="*{name}" class="form-control">-->
+						<!--<div th:if="${#fields.hasErrors('name')}" class="error-message">
+						<p th:each="error : ${#fields.errors('name')}" th:text="${error}"></p>-->
+					</div>
+		         </div>
+			
+				 <div class="addform">				
+ 					<div class="form-group">
+ 		                <label>学習時間</label>
+						<input type="number" class="form-control">
+ <!--		                <input type="text" th:field="*{study-time}" class="form-control">-->
+ 						<!--<div th:if="${#fields.hasErrors('name')}" class="error-message">
+ 						<p th:each="error : ${#fields.errors('name')}" th:text="${error}"></p>-->
+ 					</div>
+				</div>
+	</div>
+				<div class="commit">
+					<input type="submit" value="追加する" class="commitbtn">
+    			</div>
+			</form>
+</div>	
+	
+</body>
+
+<footer>
+	<div class="footer">
+		<div class="footerlogo">portfolio site</div>
+	</div>
+</footer>
+
+</html>
