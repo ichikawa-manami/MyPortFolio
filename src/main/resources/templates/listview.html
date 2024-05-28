@@ -29,6 +29,13 @@
 				<div class="table-header">
 							
 					<div class="title"><h1>バックエンド</h1>
+						<!--<div th:each="categoryName : ${categorylist}" 
+						th:text="${categoryName}" class="title"></div>-->
+<!--						<div th:text="${categoryName}" class="categoryname"></div>-->
+						
+						<!--<div class="categoryname"
+						th:text="${categoryName}" th:each="categories : ${categorylist}">-->
+						
 					</div>
 							
 <!--					<input type="submit" value="項目を追加する" class="addbtn">-->
@@ -44,9 +51,12 @@
 					</div>
 					
 					<div class="table">
-						<div class="skillname">
-							<h2>Ruby</h2>
-						</div>
+<!--							<h2>Ruby</h2>-->
+							<div class="skillname" th:if="${learn.categoryId == 1 && 
+							learn.id == 1}" 
+								th:object="${learn}" th:each="learn : ${skillName}">
+								<h2 th:text="*{name}"></h2>
+							</div>
 						
 							<div class="time">
 								<input type="number" value="0" min="0" max="60" step="1">
@@ -62,9 +72,11 @@
 					</div>
 					
 					<div class="table">
-						<div class="skillname">
-							<h2>Rails</h2>
-						</div>
+						
+						<div class="skillname" th:if="${learn.categoryId == 1 && 
+							learn.id == 4}" th:object="${learn}" th:each="learn : ${skillName}">
+							<h2 th:text="*{name}"></h2>
+						</div>	
 												
 							<div class="time">
 								<input type="number" value="0" min="0" max="60" step="1">
@@ -120,9 +132,10 @@
 						</div>
 						
 						<div class="table">
-							<div class="skillname">
-								<h2>HTML</h2>
-							</div>
+							<div class="skillname" th:if="${learn.categoryId == 2 && 
+								learn.id == 2}" th:object="${learn}" th:each="learn : ${skillName}">
+								<h2 th:text="*{name}"></h2>
+							</div>	
 							
 								<div class="time">
 									<input type="number" value="0" min="0" max="60" step="1">

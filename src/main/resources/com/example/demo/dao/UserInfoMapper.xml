@@ -23,5 +23,26 @@
 		    SET self_introduction = #{self_introduction}
 		    WHERE id = #{id}
 </update>
+
+ <select id="findBySkillName" parameterType="String" 
+ resultType="com.example.demo.entity.LearningInfo">
+		  SELECT name, id, category_id
+		  FROM learning_data
+		  WHERE id = #{id}
+</select>
+
+ <select id="findAll" parameterType="String" resultType="com.example.demo.entity.LearningInfo">
+ 	SELECT * 
+ 	FROM learning_data 
+ </select>
+ 
+    <select id="findById" parameterType="String" resultType="com.example.demo.entity.LearningInfo">
+    	SELECT * 
+    	FROM learning_data
+    	WHERE id=#{id} AND delete_date IS NULL
+    </select>
+    
+    
+
     
    </mapper>
