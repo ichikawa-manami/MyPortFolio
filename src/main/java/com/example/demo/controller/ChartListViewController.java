@@ -30,6 +30,7 @@ public class ChartListViewController {
 	    List<LearningInfo> skillName = learningInfoService.findAll();
 	    
         model.addAttribute("skillName", skillName);
+        model.addAttribute("studyTime", skillName);
         model.addAttribute("userSearchRequest", new LearningRequest());
         
 	    

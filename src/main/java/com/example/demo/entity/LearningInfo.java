@@ -19,8 +19,8 @@ public class LearningInfo implements Serializable {
 	private Long id;
 	
 	private String name;
-	
-	private String study_time;
+	@Column(value="study_time")
+	private String studyTime;
 	
 	private String month;
 	

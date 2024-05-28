@@ -26,8 +26,8 @@ public class LearningInfoService {
 	        return userInfoMapper.findById(id);
 	    }
 
-	    public LearningInfo findBySkillName(String name) {
-	    	return userInfoMapper.findBySkillName(name);
+	    public LearningInfo findBySkillName(String name,String studyTime) {
+	    	return userInfoMapper.findBySkillName(name,studyTime);
 	    }
 
 

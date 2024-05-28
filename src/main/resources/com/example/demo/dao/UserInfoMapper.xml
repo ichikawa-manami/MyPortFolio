@@ -26,7 +26,7 @@
 
  <select id="findBySkillName" parameterType="String" 
  resultType="com.example.demo.entity.LearningInfo">
-		  SELECT name, id, category_id
+		  SELECT name, id, category_id, study_time
 		  FROM learning_data
 		  WHERE id = #{id}
 </select>

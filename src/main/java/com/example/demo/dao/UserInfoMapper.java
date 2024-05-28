@@ -21,7 +21,7 @@ public interface UserInfoMapper {
 	
 	 void edit(IntroEditRequest introEditRequest);
 	 
-		public LearningInfo findBySkillName(String name);
+		public LearningInfo findBySkillName(String name,String studyTime);
 
 		List<LearningInfo> findAll();
 		
