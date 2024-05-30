@@ -9,7 +9,7 @@ import lombok.Data;
 @Data
 public class IntroEditRequest implements Serializable{
 	
-	@NotEmpty
+	@NotEmpty(message = "自己紹介は必ず入力してください")
     @Size(min=50, max = 200, message = "50文字以上、200文字以下で入力してください。")
     private String self_introduction;
     

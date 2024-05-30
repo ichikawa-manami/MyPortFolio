@@ -26,8 +26,7 @@
 	<div class="category">
 		<div class="content">
 			
-				<div class="table-header">
-							
+				<div class="table-header">	
 					<div class="title"><h1>バックエンド</h1>
 						<!--<div th:each="categoryName : ${categorylist}" 
 						th:text="${categoryName}" class="title"></div>-->
@@ -38,78 +37,31 @@
 						
 					</div>
 							
-<!--					<input type="submit" value="項目を追加する" class="addbtn">-->
-					<button onclick="location.href='listadd'" class="addbtn">項目を追加する</button>
+					<button onclick="location.href='./listadd?category_id=1'" class="addbtn">項目を追加する</button>
 				</div>
 
 				</div>
 				
 				<div class="container">
-					<div class="table-title">
-						<h2>項目名</h2>
-						<h3>学習時間</h3>
-					</div>
 					
-					<div class="table">
-<!--							<h2>Ruby</h2>-->
-							<div class="skillname" th:if="${learn.categoryId == 1 && 
-							learn.id == 1}" 
-								th:object="${learn}" th:each="learn : ${skillName}">
-								<h2 th:text="*{name}"></h2>
-							</div>
+					<table width="880px" class="table">
+						<tr>
+						  <th align="left" valign="middle">項目名</th>
+						  <th align="left" valign="middle">学習時間</th>
+						</tr>
 						
-							<div class="time" th:if="${learn.categoryId == 1 && 
-							learn.id == 1}" th:object="${learn}" th:each="learn : ${skillName}">
-								
-								<input type="number" th:value="*{studyTime}" min="0" max="60" step="1">
-							</div>
-							
-							<div class="save">
-								<input type="submit" value="学習時間を保存する" class="btn-save">
-							</div>
-								
-							<div class="delete">
-								<input type="submit" value="削除する" class="btn-delete">
-							</div>
-					</div>
-					
-					<div class="table">
-						
-						<div class="skillname" th:if="${learn.categoryId == 1 && 
-							learn.id == 4}" th:object="${learn}" th:each="learn : ${skillName}">
-							<h2 th:text="*{name}"></h2>
-						</div>	
-												
-							<div class="time">
-								<input type="number" value="0" min="0" max="60" step="1">
-							</div>
-													
-							<div class="save">
-								<input type="submit" value="学習時間を保存する" class="btn-save">
-							</div>
-								
-							<div class="delete">
-								<input type="submit" value="削除する" class="btn-delete">
-							</div>
-					</div>
-					
-					<div class="table">
-							<div class="skillname">
-								<h2>MySQL</h2>
-							</div>
-													
-							<div class="time">
-								<input type="number" value="0" min="0" max="60" step="1">
-							</div>
-													
-							<div class="save">
-								<input type="submit" value="学習時間を保存する" class="btn-save">
-							</div>
-								
-							<div class="delete">
-								<input type="submit" value="削除する" class="btn-delete">
-							</div>
-					</div>
+						<tr th:each="learn : ${skillName}" th:if="${learn.categoryId == 1}" th:object="${learn}">
+						<td width="240px" th:text="*{name}" class="h2"></td>	
+
+								<td width="200px"><input type="number" class="time" th:value="*{studyTime}" min="0" step="1"></td>
+
+	
+								<td><input type="submit" value="学習時間を保存する" class="btn-save"></td>
+
+
+								<td><input type="submit" value="削除する" class="btn-delete"></td>
+						</tr>
+					</table>
 					
 				</div>
 	</div>
@@ -122,53 +74,31 @@
 						<div class="title"><h1>フロントエンド</h1>
 						</div>
 								
-						<button onclick="location.href='listadd'" class="addbtn">項目を追加する</button>
+						<button onclick="location.href='./listadd?category_id=2'" class="addbtn">項目を追加する</button>
 					</div>
 	
 					</div>
 					
-					<div class="container2">
-						<div class="table-title">
-							<h2>項目名</h2>
-							<h3>学習時間</h3>
-						</div>
-						
-						<div class="table">
-							<div class="skillname" th:if="${learn.categoryId == 2 && 
-								learn.id == 2}" th:object="${learn}" th:each="learn : ${skillName}">
-								<h2 th:text="*{name}"></h2>
-							</div>	
+					<div class="container">
+										
+						<table width="880px" class="table">
+							<tr>
+							  <th align="left" valign="middle">項目名</th>
+							  <th align="left" valign="middle">学習時間</th>
+							</tr>
 							
-								<div class="time">
-									<input type="number" value="0" min="0" max="60" step="1">
-								</div>
-								
-								<div class="save">
-									<input type="submit" value="学習時間を保存する" class="btn-save">
-								</div>
-									
-								<div class="delete">
-									<input type="submit" value="削除する" class="btn-delete">
-								</div>
-						</div>
-						
-						<div class="table">
-							<div class="skillname">
-								<h2>CSS</h2>
-							</div>
-													
-								<div class="time">
-									<input type="number" value="0" min="0" max="60" step="1">
-								</div>
-														
-								<div class="save">
-									<input type="submit" value="学習時間を保存する" class="btn-save">
-								</div>
-									
-								<div class="delete">
-									<input type="submit" value="削除する" class="btn-delete">
-								</div>
-						</div>
+							<tr th:each="learn : ${skillName}" th:if="${learn.categoryId == 2}" th:object="${learn}">
+							<td width="240px" th:text="*{name}" class="h2"></td>	
+	
+									<td width="200px"><input type="number" class="time" th:value="*{studyTime}" min="0" step="1"></td>
+	
+		
+									<td><input type="submit" value="学習時間を保存する" class="btn-save"></td>
+	
+	
+									<td><input type="submit" value="削除する" class="btn-delete"></td>
+							</tr>
+						</table>
 						
 					</div>
 		</div>
@@ -181,72 +111,34 @@
 							<div class="title"><h1>インフラ</h1>
 							</div>
 									
-							<button onclick="location.href='listadd'" class="addbtn">項目を追加する</button>
+							<button onclick="location.href='./listadd?category_id=3'" class="addbtn">項目を追加する</button>
 						</div>
 		
 						</div>
 						
-						<div class="container">
-							<div class="table-title">
-								<h2>項目名</h2>
-								<h3>学習時間</h3>
-							</div>
-							
-							<div class="table">
-								<div class="skillname">
-									<h2>Heroku</h2>
-								</div>
+					<div class="container">
+																
+							<table width="880px" class="table">
+								<tr>
+								  <th align="left" valign="middle">項目名</th>
+								  <th align="left" valign="middle">学習時間</th>
+								</tr>
 								
-									<div class="time">
-										<input type="number" value="0" min="0" max="60" step="1">
-									</div>
-									
-									<div class="save">
-										<input type="submit" value="学習時間を保存する" class="btn-save">
-									</div>
-										
-									<div class="delete">
-										<input type="submit" value="削除する" class="btn-delete">
-									</div>
-							</div>
+							<tr th:each="learn : ${skillName}" th:if="${learn.categoryId == 3}" th:object="${learn}">
+							<td width="240px" th:text="*{name}" class="h2"></td>	
+	
+									<td width="200px"><input type="number" class="time" th:value="*{studyTime}" min="0" step="1"></td>
+	
+		
+									<td><input type="submit" value="学習時間を保存する" class="btn-save"></td>
+	
+	
+									<td><input type="submit" value="削除する" class="btn-delete"></td>
+							</tr>
+						</table>
 							
-							<div class="table">
-								<div class="skillname">
-									<h2>AWS</h2>
-								</div>
-														
-									<div class="time">
-										<input type="number" value="0" min="0" max="60" step="1">
-									</div>
-															
-									<div class="save">
-										<input type="submit" value="学習時間を保存する" class="btn-save">
-									</div>
-										
-									<div class="delete">
-										<input type="submit" value="削除する" class="btn-delete">
-									</div>
-							</div>
-							
-							<div class="table">
-									<div class="skillname">
-										<h2>Firebase</h2>
-									</div>
-															
-									<div class="time">
-										<input type="number" value="0" min="0" max="60" step="1">
-									</div>
-															
-									<div class="save">
-										<input type="submit" value="学習時間を保存する" class="btn-save">
-									</div>
-										
-									<div class="delete">
-										<input type="submit" value="削除する" class="btn-delete">
-									</div>
-							</div>
-							
-						</div>
+					</div>
+
 			</div>
 		
 </div>

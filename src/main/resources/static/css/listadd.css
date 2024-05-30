@@ -69,12 +69,16 @@ span {
 	padding-top: 80px;
 	margin: 0 auto;
 	width: 480px;
-	height: 268px;
 	align-items: center;
 }
 
-.addform {
+.categoryname {
+	width: 466px;
 	height: 48px;
+	margin-top: 40px;
+}
+
+.addform {
 	border-top: none;
 	border-left: none;
 	border-right: none;
