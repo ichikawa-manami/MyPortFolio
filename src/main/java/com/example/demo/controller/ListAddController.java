@@ -1,9 +1,9 @@
 package com.example.demo.controller;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -19,18 +19,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.authentication.CustomUserDetails;
-import com.example.demo.authentication.UserDetailsServiceImpl;
 import com.example.demo.constant.UrlConst;
-import com.example.demo.dto.CategoriesRequest;
 import com.example.demo.dto.LearningRequest;
 import com.example.demo.dto.UserAddRequest;
 import com.example.demo.entity.CategoryInfo;
-import com.example.demo.entity.LearningInfo;
-import com.example.demo.form.LoginForm;
 import com.example.demo.service.CategoriesService;
 import com.example.demo.service.LearningInfoService;
 import com.example.demo.service.ListAddService;
-import com.example.demo.service.SignupService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -42,9 +37,10 @@ public class ListAddController {
 	private final CategoriesService categoriesService;
 	private final LearningInfoService learningInfoService;
 	private final UserDetailsService userDetailsService;
+	
 
 	@GetMapping(UrlConst.LISTADD)
-	public String listviewdisplay(@RequestParam("category_id") Integer categoryId, 
+	public String listadddisplay(@RequestParam("category_id") Integer categoryId, 
 			Authentication loginUser, Model model,Long category_id) {
 
 		CustomUserDetails userDetails = (CustomUserDetails) loginUser.getPrincipal();
@@ -63,9 +59,15 @@ public class ListAddController {
 	}
 
 	@PostMapping(UrlConst.LISTADD)
-	public String introedit(@RequestParam("category_id") Integer categoryId, 
+	public String listadd(@RequestParam("category_id") Integer categoryId, 
 			@Validated @ModelAttribute LearningRequest learningRequest,
-			BindingResult result, Model model, Authentication authentication, Long category_id) {
+			BindingResult result, Model model, Authentication authentication, Long category_id,
+			String skillName) {
+		
+		 // 重複チェックをバリデーションエラーとは別に実行
+	    if (!result.hasErrors() && learningInfoService.isItemExist(learningRequest.getName())) {
+	        result.rejectValue("name", "duplicate", "入力した項目名は既に使用されています");
+	    }
 
 		if (result.hasErrors()) {
 			// 入力チェックエラーの場合
@@ -73,16 +75,10 @@ public class ListAddController {
 			for (ObjectError error : result.getAllErrors()) {
 				errorList.add(error.getDefaultMessage());
 			}
-			
-			/*			 if (learningInfoService.isItemExist(learningRequest.getName())) {
-			        result.rejectValue("name", "duplicate", "入力した項目名は既に使用されています");
-			    }
-			
-			    model.addAttribute("learningRequest", new LearningRequest());*/
-			
-	            
+
 			model.addAttribute("validationError", errorList);
 			model.addAttribute("category_id",categoryId);
+			model.addAttribute("userAddRequest", new UserAddRequest());
 			
 		    CategoryInfo catName = categoriesService.findByCategoryName(category_id);
 	        model.addAttribute("name", catName);

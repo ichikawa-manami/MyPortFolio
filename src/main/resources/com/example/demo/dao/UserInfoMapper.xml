@@ -55,7 +55,8 @@
  </select>
 
 <select id="findCatName" parameterType="String" resultType="com.example.demo.entity.LearningInfo">
-  SELECT name FROM learning_data
+  SELECT name 
+  FROM learning_data
   WHERE name = #{name}
 </select>
 

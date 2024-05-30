@@ -13,7 +13,6 @@ public class LearningRequest implements Serializable {
 	
  private Long id;
 	
-// @UniqueElements(message = "（入力した項目名）は既に登録されています")
  @NotEmpty(message = "項目名は必ず入力してください")
  @Size(max = 50, message = "50文字以内で入力してください")
 	private String name;
