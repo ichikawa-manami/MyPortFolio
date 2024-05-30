@@ -22,38 +22,48 @@
 	</header>
 	
 <div class="container">
-        
-     <h1>{カテゴリー名}に項目を追加</h1>
+	
+<!--      <form  th:object="${categoriesRequest}">-->
+<!--	th:if="${cat.categoryId == 1}" -->
+<!--		<div class="categoryname" -->
+<!--					th:object="${cat}" th:each="cat : ${catName}">-->
+    	 	<h1 th:text="*{name.name} + 'に項目名を追加'"></h1>
+<!--		</div>-->
+<!--	</form>-->
+
+
+	 
 	<div class="form">
-			<!--<form th:action="@{/introedit}" th:object="${introEditRequest}" th:method="post"> 
-						<input type="hidden" name="id" th:value="${id}">-->
-			
+			<form th:action="@{/listadd}" th:object="${learningRequest}" th:method="post"> 
+				<input type="hidden" name="category_id" th:value="${category_id}">
+				<input type="hidden" name="user_id" th:value="${user_id}">
 				<div class="addform">
 					
 					<div class="form-group">
 		                <label>項目名</label>
-						<input type="text" class="form-control">
-<!--		                <input type="text" th:field="*{name}" class="form-control">-->
-						<!--<div th:if="${#fields.hasErrors('name')}" class="error-message">
-						<p th:each="error : ${#fields.errors('name')}" th:text="${error}"></p>-->
-					</div>
-		         </div>
-			
-				 <div class="addform">				
+						<input type="text" th:field="*{name}" class="form-control">
+						<div th:if="${#fields.hasErrors('name')}" th:errors="*{name}" 
+							class="error-message">
+							<p th:each="error : ${#fields.errors('name')}" th:text="${error}"></p>
+						</div>
+		        	 </div>
+						
  					<div class="form-group">
  		                <label>学習時間</label>
-						<input type="number" class="form-control">
- <!--		                <input type="text" th:field="*{study-time}" class="form-control">-->
- 						<!--<div th:if="${#fields.hasErrors('name')}" class="error-message">
- 						<p th:each="error : ${#fields.errors('name')}" th:text="${error}"></p>-->
+						<input type="number" th:field="*{study_time}" class="form-control">
+ 						<div th:if="${#fields.hasErrors('study_time')}" th:errors="*{study_time}" 
+						class="error-message">
+ 						<p th:each="error : ${#fields.errors('study_time')}" th:text="${error}"></p>
  					</div>
 				</div>
-	</div>
-				<div class="commit">
-					<input type="submit" value="追加する" class="commitbtn">
-    			</div>
+				
+					<div class="commit">
+						<input type="submit" value="追加する" class="commitbtn">
+	    			</div>
+				</div>
 			</form>
-</div>	
+	</div>	
+</div>
 	
 </body>
 

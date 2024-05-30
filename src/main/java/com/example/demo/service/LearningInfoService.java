@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dao.UserInfoMapper;
+import com.example.demo.entity.CategoryInfo;
 import com.example.demo.entity.LearningInfo;
 import com.example.demo.repository.UserInfoRepository;
 
@@ -30,5 +31,12 @@ public class LearningInfoService {
 	    	return userInfoMapper.findBySkillName(name,studyTime);
 	    }
 
+//	    重複チェック
+	    public boolean isItemExist(String name) {
+
+			LearningInfo existingItem = userInfoMapper.findCatName(name);
+			return existingItem != null;
+		}
+	    
 
 }

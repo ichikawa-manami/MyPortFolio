@@ -12,6 +12,8 @@ public class UrlConst {
 	
 	public static final String CHARTLIST = "/listview";
 	
+	public static final String LISTADD = "/listadd";
+	
 	public static final String[] NO_AUTHENTICATION = {LOGIN,SIGNUP};
 }
 ;

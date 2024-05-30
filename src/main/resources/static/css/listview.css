@@ -124,40 +124,32 @@ span {
 	margin: auto;
 }
 
-.container {
-	width: 880px;
-	height: 276px;
-	margin: auto;
-	box-shadow: 0px 1px 5px 0px #0000001F,
-	0px 2px 2px 0px #00000024,
-	0px 3px 1px -2px #00000033;
-}
+/*.container {*/
+/*	width: 880px;*/
+/*	height: 276px;*/
+/*	margin: auto;*/
+/*	box-shadow: 0px 1px 5px 0px #0000001F,*/
+/*	0px 2px 2px 0px #00000024,*/
+/*	0px 3px 1px -2px #00000033;*/
+/*}*/
 
-.container2 {
-	width: 880px;
-	height: 203px;
-	margin: auto;
-	box-shadow: 0px 1px 5px 0px #0000001F,
-	0px 2px 2px 0px #00000024,
-	0px 3px 1px -2px #00000033;
-}
 
 .table {
-	height: 73px;
+	height: 85px;
 	align-items: center;
-	display: flex;
 	width: 880px;
 	margin: auto;
-	justify-content: space-between;
 	border-top:1px solid rgb(192, 192, 192);
-}
-
-.skillname {
-	width: 240px;
-}
+	box-shadow: 0px 1px 5px 0px #0000001F,
+	0px 2px 2px 0px #00000024,
+	0px 3px 1px -2px #00000033;
+/*	border-spacing: 0;*/
+/*	padding: 25px 0px 0px 0px;*/
+/*	border-spacing: 0px 1rem;*/
+	}
 
 .time {
-	width: 240px;
+	width: 200px;
 }
 
 .save {
@@ -173,7 +165,29 @@ input {
 	height: 40px;
 }
 
+tbody {
+	margin-top: 140px;
+}
+
+tr {
+	margin: auto;
+	height: 60px;
+}
+
+th {
+	font-family: Roboto;
+	color: #0000008A;
+	flex-basis: 240px; /* flexアイテムの幅を数値で指定 */
+/*	border-bottom: 1px solid rgb(192, 192, 192);*/
+	margin: auto;
+}
+
+td {
+  border-bottom: 1px solid rgb(192, 192, 192);
+}
+
 .btn-save {
+	margin-left: 60px;
 	width: 158px;
 	height: 32px;
 	border-radius: 4px 4px 4px 4px;
@@ -198,7 +212,7 @@ input {
 	font-size: 14px;
 	font-weight: 600;
 	font-family: Roboto;
-	margin-left: 60px;
+	margin-left: 20px;
 }
 
 h1 {
@@ -212,13 +226,16 @@ h1 {
 }
 
 
-h2 {
+.h2 {
+	width: 240px;
 	font-family: Roboto;
 	font-size: 15px;
 	color: #0000008A;
 	flex-basis: 210px; /* flexアイテムの幅を数値で指定 */
 	margin-left: 30px;
 }
+
+
 
 h3 {
 	font-family: Roboto;

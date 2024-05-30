@@ -1,5 +1,6 @@
 package com.example.demo.dao;
 import java.util.List;
+
 import java.util.Optional;
 
 
@@ -8,8 +9,11 @@ import java.util.Optional;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.example.demo.dto.CategoriesRequest;
 import com.example.demo.dto.IntroEditRequest;
+import com.example.demo.dto.LearningRequest;
 import com.example.demo.dto.UserAddRequest;
+import com.example.demo.entity.CategoryInfo;
 import com.example.demo.entity.LearningInfo;
 import com.example.demo.entity.UserInfo;
 
@@ -28,4 +32,10 @@ public interface UserInfoMapper {
 		LearningInfo findId(Long id);
 
 		public LearningInfo findById(Long id);
+		
+		void add(LearningRequest learningRequest);
+
+		public CategoryInfo findByCategoryName(Long category_id);
+		
+		public LearningInfo findCatName(String name);
 }
