@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import com.example.demo.dto.IntroEditRequest;
 import com.example.demo.dto.LearningRequest;
+import com.example.demo.dto.TimeEditRequest;
 import com.example.demo.dto.UserAddRequest;
 import com.example.demo.entity.CategoryInfo;
 import com.example.demo.entity.LearningInfo;
@@ -32,4 +33,5 @@ public interface UserInfoMapper {
 		
 		public LearningInfo findCatName(String name);
 		
+		void timeedit(TimeEditRequest timeEditRequest);
 }
