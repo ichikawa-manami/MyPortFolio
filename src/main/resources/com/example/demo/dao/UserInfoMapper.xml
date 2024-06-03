@@ -60,5 +60,11 @@
   WHERE name = #{name}
 </select>
 
+<update id="timeedit">
+	UPDATE learning_data
+    SET study_time = #{studyTime}
+    WHERE id = #{id}
+</update>
+
     
    </mapper>

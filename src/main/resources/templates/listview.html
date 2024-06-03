@@ -26,7 +26,7 @@
 	<div class="category">
 		<div class="content">
 			
-				<div class="table-header">	
+			<div class="table-header">	
 					<div class="title"><h1>バックエンド</h1>
 						<!--<div th:each="categoryName : ${categorylist}" 
 						th:text="${categoryName}" class="title"></div>-->
@@ -38,9 +38,9 @@
 					</div>
 							
 					<button onclick="location.href='./listadd?category_id=1'" class="addbtn">項目を追加する</button>
-				</div>
+			</div>
 
-				</div>
+		</div>
 				
 				<div class="container">
 					
@@ -48,26 +48,33 @@
 						<tr>
 						  <th align="left" valign="middle">項目名</th>
 						  <th align="left" valign="middle">学習時間</th>
+						  <th></th>
+						  <th></th>
 						</tr>
-						
+				
 						<tr th:each="learn : ${skillName}" th:if="${learn.categoryId == 1}" th:object="${learn}">
-						<td width="240px" th:text="*{name}" class="h2"></td>	
+							
+						<td width="240px" th:text="*{name}" class="h2"></td>
+						
+						<td width="440px">
+							<form th:action="@{/listview}" th:method="post">
+								<input type="number" name="studyTime" class="time" th:value="${learn.studyTime}" min="0" step="1">
+								<input type="hidden" name="id" th:value="${learn.id}">
+								<input type="submit" value="学習時間を保存する" class="btn-save">
+							</form>
+						</td>
 
-								<td width="200px"><input type="number" class="time" th:value="*{studyTime}" min="0" step="1"></td>
-
-	
-								<td><input type="submit" value="学習時間を保存する" class="btn-save"></td>
-
-
-								<td><input type="submit" value="削除する" class="btn-delete"></td>
+							<td width="200px">
+								<input type="submit" value="削除する" class="btn-delete">
+							</td>
+						
 						</tr>
 					</table>
-					
 				</div>
 	</div>
-	
+
 	<div class="category">
-			<div class="content">
+		<div class="content">
 				
 					<div class="table-header">
 								
@@ -77,30 +84,38 @@
 						<button onclick="location.href='./listadd?category_id=2'" class="addbtn">項目を追加する</button>
 					</div>
 	
-					</div>
+		</div>
 					
-					<div class="container">
+			<div class="container">
 										
-						<table width="880px" class="table">
-							<tr>
-							  <th align="left" valign="middle">項目名</th>
-							  <th align="left" valign="middle">学習時間</th>
-							</tr>
-							
-							<tr th:each="learn : ${skillName}" th:if="${learn.categoryId == 2}" th:object="${learn}">
-							<td width="240px" th:text="*{name}" class="h2"></td>	
-	
-									<td width="200px"><input type="number" class="time" th:value="*{studyTime}" min="0" step="1"></td>
-	
-		
-									<td><input type="submit" value="学習時間を保存する" class="btn-save"></td>
-	
-	
-									<td><input type="submit" value="削除する" class="btn-delete"></td>
-							</tr>
-						</table>
+				<table width="880px" class="table">
+					<tr>
+					  <th align="left" valign="middle">項目名</th>
+					  <th align="left" valign="middle">学習時間</th>
+					  <th></th>
+					  <th></th>
+					</tr>
+			
+					<tr th:each="learn : ${skillName}" th:if="${learn.categoryId == 2}" th:object="${learn}">
 						
-					</div>
+					<td width="240px" th:text="*{name}" class="h2"></td>
+					
+					<td width="440px">
+						<form th:action="@{/listview}" th:method="post">
+							<input type="number" name="studyTime" class="time" th:value="${learn.studyTime}" min="0" step="1">
+							<input type="hidden" name="id" th:value="${learn.id}">
+							<input type="submit" value="学習時間を保存する" class="btn-save">
+						</form>
+					</td>
+
+						<td width="200px">
+							<input type="submit" value="削除する" class="btn-delete">
+						</td>
+					
+					</tr>
+				</table>
+						
+			</div>
 		</div>
 		
 		<div class="category">
@@ -114,39 +129,40 @@
 							<button onclick="location.href='./listadd?category_id=3'" class="addbtn">項目を追加する</button>
 						</div>
 		
-						</div>
+				</div>
 						
 					<div class="container">
 																
-							<table width="880px" class="table">
-								<tr>
-								  <th align="left" valign="middle">項目名</th>
-								  <th align="left" valign="middle">学習時間</th>
-								</tr>
-								
+						<table width="880px" class="table">
+							<tr>
+							  <th align="left" valign="middle">項目名</th>
+							  <th align="left" valign="middle">学習時間</th>
+							  <th></th>
+							  <th></th>
+							</tr>
+					
 							<tr th:each="learn : ${skillName}" th:if="${learn.categoryId == 3}" th:object="${learn}">
-							<td width="240px" th:text="*{name}" class="h2"></td>	
+								
+							<td width="240px" th:text="*{name}" class="h2"></td>
+							
+							<td width="440px">
+								<form th:action="@{/listview}" th:method="post">
+									<input type="number" name="studyTime" class="time" th:value="${learn.studyTime}" min="0" step="1">
+									<input type="hidden" name="id" th:value="${learn.id}">
+									<input type="submit" value="学習時間を保存する" class="btn-save">
+								</form>
+							</td>
 	
-									<td width="200px"><input type="number" class="time" th:value="*{studyTime}" min="0" step="1"></td>
-	
-		
-									<td><input type="submit" value="学習時間を保存する" class="btn-save"></td>
-	
-	
-									<td><input type="submit" value="削除する" class="btn-delete"></td>
+								<td width="200px">
+									<input type="submit" value="削除する" class="btn-delete">
+								</td>
 							</tr>
 						</table>
-							
 					</div>
-
 			</div>
-		
 </div>
-        
-</div>	
 	
 </body>
-
 
 <footer>
 	<div class="footer">
