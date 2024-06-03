@@ -64,9 +64,12 @@
 							</form>
 						</td>
 
-							<td width="200px">
+						<td width="200px">
+							<form th:action="@{/listview}" th:method="post">
+								<input type="hidden" name="id" th:value="${learn.id}">
 								<input type="submit" value="削除する" class="btn-delete">
-							</td>
+							</form>
+						</td>
 						
 						</tr>
 					</table>
@@ -108,9 +111,12 @@
 						</form>
 					</td>
 
-						<td width="200px">
+					<td width="200px">
+						<form th:action="@{/listview}" th:method="post">
+							<input type="hidden" name="id" th:value="${learn.id}">
 							<input type="submit" value="削除する" class="btn-delete">
-						</td>
+						</form>
+					</td>
 					
 					</tr>
 				</table>
@@ -153,9 +159,13 @@
 								</form>
 							</td>
 	
-								<td width="200px">
+							<td width="200px">
+								<form th:action="@{/listview}" th:method="post">
+									<input type="hidden" name="id" th:value="${learn.id}">
 									<input type="submit" value="削除する" class="btn-delete">
-								</td>
+								</form>
+							</td>
+							
 							</tr>
 						</table>
 					</div>

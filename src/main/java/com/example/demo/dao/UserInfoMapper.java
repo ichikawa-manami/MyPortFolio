@@ -3,6 +3,8 @@ import java.util.List;
 
 
 import org.apache.ibatis.annotations.Mapper;
+
+import com.example.demo.dto.DeleteRequest;
 import com.example.demo.dto.IntroEditRequest;
 import com.example.demo.dto.LearningRequest;
 import com.example.demo.dto.TimeEditRequest;
@@ -34,4 +36,6 @@ public interface UserInfoMapper {
 		public LearningInfo findCatName(String name);
 		
 		void timeedit(TimeEditRequest timeEditRequest);
+		
+		void delete(DeleteRequest deleteRequest);
 }
