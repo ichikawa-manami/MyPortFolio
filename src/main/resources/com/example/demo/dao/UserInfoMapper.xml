@@ -66,5 +66,10 @@
     WHERE id = #{id}
 </update>
 
+<delete id="delete">
+DELETE FROM learning_data
+WHERE id = #{id}
+</delete>
+
     
    </mapper>

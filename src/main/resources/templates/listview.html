@@ -46,17 +46,17 @@
 					
 					<table width="880px" class="table">
 						<tr>
-						  <th align="left" valign="middle">項目名</th>
+						  <th class="left-padding" align="left" valign="middle">項目名</th>
 						  <th align="left" valign="middle">学習時間</th>
 						  <th></th>
 						  <th></th>
 						</tr>
 				
-						<tr th:each="learn : ${skillName}" th:if="${learn.categoryId == 1}" th:object="${learn}">
+						<tr th:each="learn : ${skillName}" th:if="${learn.categoryId == 3}" th:object="${learn}">
 							
-						<td width="240px" th:text="*{name}" class="h2"></td>
+						<td width="210px" th:text="*{name}" class="h2"></td>
 						
-						<td width="440px">
+						<td width="470px">
 							<form th:action="@{/listview}" th:method="post">
 								<input type="number" name="studyTime" class="time" th:value="${learn.studyTime}" min="0" step="1">
 								<input type="hidden" name="id" th:value="${learn.id}">
@@ -64,9 +64,12 @@
 							</form>
 						</td>
 
-							<td width="200px">
+						<td width="200px">
+							<form th:action="@{/listview}" th:method="post">
+								<input type="hidden" name="id" th:value="${learn.id}">
 								<input type="submit" value="削除する" class="btn-delete">
-							</td>
+							</form>
+						</td>
 						
 						</tr>
 					</table>
@@ -90,17 +93,17 @@
 										
 				<table width="880px" class="table">
 					<tr>
-					  <th align="left" valign="middle">項目名</th>
+					  <th class="left-padding" align="left" valign="middle">項目名</th>
 					  <th align="left" valign="middle">学習時間</th>
 					  <th></th>
 					  <th></th>
 					</tr>
 			
-					<tr th:each="learn : ${skillName}" th:if="${learn.categoryId == 2}" th:object="${learn}">
+					<tr th:each="learn : ${skillName}" th:if="${learn.categoryId == 3}" th:object="${learn}">
 						
-					<td width="240px" th:text="*{name}" class="h2"></td>
+					<td width="210px" th:text="*{name}" class="h2"></td>
 					
-					<td width="440px">
+					<td width="470px">
 						<form th:action="@{/listview}" th:method="post">
 							<input type="number" name="studyTime" class="time" th:value="${learn.studyTime}" min="0" step="1">
 							<input type="hidden" name="id" th:value="${learn.id}">
@@ -108,9 +111,12 @@
 						</form>
 					</td>
 
-						<td width="200px">
+					<td width="200px">
+						<form th:action="@{/listview}" th:method="post">
+							<input type="hidden" name="id" th:value="${learn.id}">
 							<input type="submit" value="削除する" class="btn-delete">
-						</td>
+						</form>
+					</td>
 					
 					</tr>
 				</table>
@@ -135,7 +141,7 @@
 																
 						<table width="880px" class="table">
 							<tr>
-							  <th align="left" valign="middle">項目名</th>
+							  <th class="left-padding" align="left" valign="middle">項目名</th>
 							  <th align="left" valign="middle">学習時間</th>
 							  <th></th>
 							  <th></th>
@@ -143,9 +149,9 @@
 					
 							<tr th:each="learn : ${skillName}" th:if="${learn.categoryId == 3}" th:object="${learn}">
 								
-							<td width="240px" th:text="*{name}" class="h2"></td>
+							<td width="210px" th:text="*{name}" class="h2"></td>
 							
-							<td width="440px">
+							<td width="470px">
 								<form th:action="@{/listview}" th:method="post">
 									<input type="number" name="studyTime" class="time" th:value="${learn.studyTime}" min="0" step="1">
 									<input type="hidden" name="id" th:value="${learn.id}">
@@ -153,9 +159,13 @@
 								</form>
 							</td>
 	
-								<td width="200px">
+							<td width="200px">
+								<form th:action="@{/listview}" th:method="post">
+									<input type="hidden" name="id" th:value="${learn.id}">
 									<input type="submit" value="削除する" class="btn-delete">
-								</td>
+								</form>
+							</td>
+							
 							</tr>
 						</table>
 					</div>
