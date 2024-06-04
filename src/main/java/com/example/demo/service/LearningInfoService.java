@@ -35,5 +35,13 @@ public class LearningInfoService {
 			LearningInfo existingItem = userInfoMapper.findCatName(name);
 			return existingItem != null;
 	}     
+	    
+//	    public LearningInfo chartTime(String studyTime) {
+//	        return userInfoMapper.chartTime(studyTime);
+//	    }
+	    
+	    public List<LearningInfo> getLearningData() {
+	        return userInfoMapper.getLearningData();
+	    }
 
 }

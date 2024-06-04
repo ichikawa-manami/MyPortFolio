@@ -22,7 +22,7 @@ public class LearningInfo implements Serializable {
 	
 @Column(value="study_time")
 	private String studyTime;
-	
+
 	private String month;
 	
 @Column(value="category_id")

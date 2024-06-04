@@ -52,7 +52,7 @@
 						  <th></th>
 						</tr>
 				
-						<tr th:each="learn : ${skillName}" th:if="${learn.categoryId == 3}" th:object="${learn}">
+						<tr th:each="learn : ${skillName}" th:if="${learn.categoryId == 1}" th:object="${learn}">
 							
 						<td width="210px" th:text="*{name}" class="h2"></td>
 						
@@ -65,7 +65,7 @@
 						</td>
 
 						<td width="200px">
-							<form th:action="@{/listview}" th:method="post">
+							<form th:action="@{/deleteStudyTime}" th:method="post">
 								<input type="hidden" name="id" th:value="${learn.id}">
 								<input type="submit" value="削除する" class="btn-delete">
 							</form>
@@ -99,7 +99,7 @@
 					  <th></th>
 					</tr>
 			
-					<tr th:each="learn : ${skillName}" th:if="${learn.categoryId == 3}" th:object="${learn}">
+					<tr th:each="learn : ${skillName}" th:if="${learn.categoryId == 2}" th:object="${learn}">
 						
 					<td width="210px" th:text="*{name}" class="h2"></td>
 					
@@ -112,7 +112,7 @@
 					</td>
 
 					<td width="200px">
-						<form th:action="@{/listview}" th:method="post">
+						<form th:action="@{/deleteStudyTime}" th:method="post">
 							<input type="hidden" name="id" th:value="${learn.id}">
 							<input type="submit" value="削除する" class="btn-delete">
 						</form>
@@ -160,7 +160,7 @@
 							</td>
 	
 							<td width="200px">
-								<form th:action="@{/listview}" th:method="post">
+								<form th:action="@{/deleteStudyTime}" th:method="post">
 									<input type="hidden" name="id" th:value="${learn.id}">
 									<input type="submit" value="削除する" class="btn-delete">
 								</form>

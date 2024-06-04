@@ -71,5 +71,13 @@ DELETE FROM learning_data
 WHERE id = #{id}
 </delete>
 
+ <select id="getLearningData"  resultType="com.example.demo.entity.LearningInfo">
+ SELECT  date_format(month,'%m') AS month,category_id,SUM(study_time) AS study_time
+ FROM learning_data
+ WHERE date_format(month,'%m') in ('04','05', '06')
+ GROUP BY category_id, date_format(month,'%m')
+ ORDER BY category_id;
+</select>
+
     
    </mapper>

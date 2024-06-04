@@ -38,4 +38,8 @@ public interface UserInfoMapper {
 		void timeedit(TimeEditRequest timeEditRequest);
 		
 		void delete(DeleteRequest deleteRequest);
+		
+//		public LearningInfo chartTime(String studyTime);
+		
+		List<LearningInfo> getLearningData();
 }

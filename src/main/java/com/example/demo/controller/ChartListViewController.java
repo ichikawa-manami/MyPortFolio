@@ -41,8 +41,7 @@ public class ChartListViewController {
 	}
 	
 	@PostMapping(UrlConst.CHARTLIST)
-	public String listview(Model model,TimeEditRequest timeEditRequest, 
-			DeleteRequest deleteRequest) {
+	public String listview(Model model,TimeEditRequest timeEditRequest) {
 		
 //		List<LearningInfo> skillName = learningInfoService.findAll();
 //	    
@@ -52,8 +51,16 @@ public class ChartListViewController {
       
 		timeEditService.timeedit(timeEditRequest);
 		
-		deleteService.delete(deleteRequest);
-		
 		return "redirect:/listview";
 	}
+	
+	   @PostMapping("/deleteStudyTime")
+	    public String deleteStudyTime(Model model, DeleteRequest deleteRequest,
+	    		TimeEditRequest timeEditRequest) {
+		   
+		   model.addAttribute("id",timeEditRequest);
+		   deleteService.delete(deleteRequest);
+		   
+	        return "redirect:/listview";
+	    }
 }
