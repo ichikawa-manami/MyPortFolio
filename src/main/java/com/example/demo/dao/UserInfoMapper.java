@@ -15,7 +15,7 @@ import com.example.demo.entity.UserInfo;
 
 @Mapper
 public interface UserInfoMapper {
-	 void save(UserAddRequest userAddRequest);
+	 void save(UserAddRequest userRequest);
 
 	public UserInfo findByEmail(String email);
 	
@@ -38,4 +38,8 @@ public interface UserInfoMapper {
 		void timeedit(TimeEditRequest timeEditRequest);
 		
 		void delete(DeleteRequest deleteRequest);
+		
+//		public LearningInfo chartTime(String studyTime);
+		
+		List<LearningInfo> getLearningData();
 }
