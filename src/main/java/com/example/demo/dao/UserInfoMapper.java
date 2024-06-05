@@ -15,7 +15,7 @@ import com.example.demo.entity.UserInfo;
 
 @Mapper
 public interface UserInfoMapper {
-	 void save(UserAddRequest userAddRequest);
+	 void save(UserAddRequest userRequest);
 
 	public UserInfo findByEmail(String email);
 	

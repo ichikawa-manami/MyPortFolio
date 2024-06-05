@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.dao.UserInfoMapper;
 import com.example.demo.dto.UserAddRequest;
@@ -26,9 +27,15 @@ public class SignupService {
      * ユーザ情報登録
      * @param userAddRequest リクエストデータ
      */
-    public void save(UserAddRequest userAddRequest) {
-        String encodedPassword = passwordEncoder.encode(userAddRequest.getPassword());
-        userAddRequest.setPassword(encodedPassword);
-        userInfoMapper.save(userAddRequest);
+    @Transactional
+    public void save(UserAddRequest userRequest) {
+        String encodedPassword = passwordEncoder.encode(userRequest.getPassword());
+        userRequest.setPassword(encodedPassword);
+        // データベースに保存する処理を追加
+        UserInfo userInfo = new UserInfo();
+        userInfo.setEmail(userRequest.getEmail());
+        userInfo.setPassword(encodedPassword);
+        
+        userInfoMapper.save(userRequest);
     }
 }

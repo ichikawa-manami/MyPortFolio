@@ -2,6 +2,7 @@ package com.example.demo.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+
 import org.springframework.context.annotation.Bean;
 
 import org.springframework.context.annotation.Configuration;
@@ -12,7 +13,6 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
@@ -22,9 +22,11 @@ import com.example.demo.service.LoginService;
 @EnableWebSecurity
 @Configuration
 public class WebSecurityConfig {
+
 	
 	@Autowired
 	private UserDetailsService userDetailsService;
+	private PasswordEncoder passwordEncoder;
 	
 	private final String USERNAME_PARAMETER = "email";
 
@@ -46,19 +48,22 @@ public class WebSecurityConfig {
 		return http.build();
 	}
 	
-	 protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-	        // UserDetailsServiceを設定し、ユーザー認証情報を提供
-		 auth.userDetailsService(userDetailsService)
-	                // パスワードエンコードを行わない設定
-	                .passwordEncoder(NoOpPasswordEncoder.getInstance());
+//	自動ログインで追記
 	
-}
+	@Bean
+    public AuthenticationManager authenticationManager(HttpSecurity http) throws Exception {
+        AuthenticationManagerBuilder authManagerBuilder = 
+                http.getSharedObject(AuthenticationManagerBuilder.class);
+        authManagerBuilder
+            .userDetailsService(userDetailsService)
+            .passwordEncoder(passwordEncoder());
+        return authManagerBuilder.build();
+    }
 
-	 
-	@Bean 
-	    public AuthenticationManager authenticationManager
-	    (AuthenticationConfiguration authenticationConfiguration) throws Exception {
-	        return authenticationConfiguration.getAuthenticationManager();
-	    }
-	 
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
 }
