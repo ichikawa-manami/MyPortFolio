@@ -33,11 +33,25 @@ public class IntroEditController {
 	@GetMapping(UrlConst.S_I_EDIT)
 	public String introeditview(Authentication loginUser, Model model) {
 		
+		 // SecurityContextから認証情報を取得
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String userName = auth.getName();
+        model.addAttribute("userName", userName);
+        
+        // Principalからログインユーザの情報を取得
         CustomUserDetails userDetails = (CustomUserDetails) loginUser.getPrincipal();
+        Long userId = userDetails.getId();
+        
+        // 既存の自己紹介を取得してモデルに追加
+        String selfIntroduction = userDetails.getSelf_introduction();
+        model.addAttribute("self_introduction", selfIntroduction);
 
+//既存
 		 model.addAttribute("introEditRequest", new IntroEditRequest());
          model.addAttribute("hoge", userDetails.getName());
          model.addAttribute("id",userDetails.getId());//Idを取得し、Viewに渡す
+         
+         
          
 	return "introedit";
 }
@@ -62,6 +76,7 @@ public class IntroEditController {
 		
 		CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
 	    Long userId = userDetails.getId(); // ユーザーIDを取得
+	    model.addAttribute("self_introduction", userDetails.getSelf_introduction());
 	    
 	    // 編集内容をアップデート
 		introEditService.edit(introRequest);

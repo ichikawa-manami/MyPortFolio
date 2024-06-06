@@ -28,7 +28,7 @@ public class LearningInfo implements Serializable {
 @Column(value="category_id")
 	private Integer categoryId;
 	
-	private String user_id;
+	private  Long user_id;
 	
 	private String created_at;
 	

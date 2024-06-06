@@ -24,16 +24,17 @@
 		    WHERE id = #{id}
 </update>
 
- <select id="findBySkillName" parameterType="String" 
+ <select id="findBySkillName"
  resultType="com.example.demo.entity.LearningInfo">
 		  SELECT name, id, category_id, study_time
 		  FROM learning_data
 		  WHERE id = #{id}
 </select>
 
- <select id="findAll" parameterType="String" resultType="com.example.demo.entity.LearningInfo">
+ <select id="findAll" resultType="com.example.demo.entity.LearningInfo">
  	SELECT * 
  	FROM learning_data 
+ 	where user_id = #{userId}
  </select>
  
     <select id="findById" parameterType="String" resultType="com.example.demo.entity.LearningInfo">
@@ -78,6 +79,12 @@ WHERE id = #{id}
  GROUP BY category_id, date_format(month,'%m')
  ORDER BY category_id;
 </select>
+
+    <select id="getIntroEditByUserId" resultType="com.example.demo.entity.UserInfo">
+        SELECT id, self_introduction
+        FROM users
+        WHERE id = #{id}
+    </select>
 
     
    </mapper>

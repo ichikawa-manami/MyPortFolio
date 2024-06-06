@@ -2,11 +2,13 @@ package com.example.demo.controller;
 
 import java.util.List;
 
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.example.demo.authentication.CustomUserDetails;
 import com.example.demo.constant.UrlConst;
 import com.example.demo.dto.DeleteRequest;
 import com.example.demo.dto.TimeEditRequest;
@@ -28,9 +30,12 @@ public class ChartListViewController {
 	private final DeleteService deleteService;
 	
 	@GetMapping(UrlConst.CHARTLIST)
-	public String listviewdisplay(Model model,String name) {
+	public String listviewdisplay(Model model,String name,Authentication loginUser) {
+		
+		 CustomUserDetails userDetails = (CustomUserDetails) loginUser.getPrincipal();
 	    
-	    List<LearningInfo> skillName = learningInfoService.findAll();
+		 Long userId = userDetails.getId();
+	    List<LearningInfo> skillName = learningInfoService.findAll(userId);
 	    
         model.addAttribute("skillName", skillName);
 //        model.addAttribute("studyTime", skillName);

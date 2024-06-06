@@ -16,8 +16,8 @@ public class LearningInfoService {
     private final UserInfoMapper userInfoMapper;
   
 
-	 public List<LearningInfo> findAll() {
-	        return userInfoMapper.findAll();
+	 public List<LearningInfo> findAll(Long userId) {
+	        return userInfoMapper.findAll(userId);
 	    }
 
 

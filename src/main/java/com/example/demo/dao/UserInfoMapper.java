@@ -21,9 +21,11 @@ public interface UserInfoMapper {
 	
 	 void edit(IntroEditRequest introEditRequest);
 	 
+	 public UserInfo getIntroEditByUserId(Long id);
+	 
 		public LearningInfo findBySkillName(String name,String studyTime);
 
-		List<LearningInfo> findAll();
+		List<LearningInfo> findAll(Long userId);
 		
 		LearningInfo findId(Long id);
 
@@ -42,4 +44,6 @@ public interface UserInfoMapper {
 //		public LearningInfo chartTime(String studyTime);
 		
 		List<LearningInfo> getLearningData();
+
+		
 }
