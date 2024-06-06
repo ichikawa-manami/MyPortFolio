@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.dao.UserInfoMapper;
 import com.example.demo.dto.IntroEditRequest;
+import com.example.demo.entity.UserInfo;
 import com.example.demo.repository.UserInfoRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -24,4 +25,6 @@ public class IntroEditService {
        
         userInfoMapper.edit(introEditRequest);
     }
+    
+    
 }

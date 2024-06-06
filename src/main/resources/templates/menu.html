@@ -78,6 +78,8 @@
 			
 			// データの存在を確認し、存在しない場合にはデフォルト値を設定する
 			function getStudyTime(arr, index) {
+				if (!arr) {
+					return 0; }
 			    return (arr && arr[index]) ? arr[index].studyTime : 0;
 			}
 
