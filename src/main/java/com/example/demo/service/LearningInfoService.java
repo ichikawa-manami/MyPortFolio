@@ -40,8 +40,9 @@ public class LearningInfoService {
 //	        return userInfoMapper.chartTime(studyTime);
 //	    }
 	    
-	    public List<LearningInfo> getLearningData() {
-	        return userInfoMapper.getLearningData();
+	    public List<LearningInfo> getLearningData(Long userId) {
+	        return userInfoMapper.getLearningData(userId);
 	    }
+	    
 
 }

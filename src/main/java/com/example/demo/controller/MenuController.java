@@ -27,22 +27,33 @@ public class MenuController {
 	@GetMapping(UrlConst.MENU)
 	public String view(Authentication loginUser,Model model) {
 		
+		CustomUserDetails userDetails = (CustomUserDetails) loginUser.getPrincipal();
+	    
+//		ユーザーごとに表示の機能で追記
+		 Long userId = userDetails.getId();
+	    List<LearningInfo> skillName = learningInfoService.findAll(userId);
+	    model.addAttribute("skillName", skillName);
+	    
+	    
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
       
         //Principalからログインユーザの情報を取得
         String userName = auth.getName();
         model.addAttribute("userName", userName);
+        
+        
+        // ログインユーザーの学習データを取得※fb後追記
+        List<LearningInfo> learningData = learningInfoService.getLearningData(userId);
+        model.addAttribute("learningData", learningData);
 		
         
         model.addAttribute("userAddRequest", new UserAddRequest());
         model.addAttribute("email", loginUser.getName());
-	 CustomUserDetails userDetails = (CustomUserDetails) loginUser.getPrincipal();
         model.addAttribute("userName", userDetails.getName());
         model.addAttribute("self_introduction", userDetails.getSelf_introduction());
         
         
-        List<LearningInfo> learningData = learningInfoService.getLearningData();
-        model.addAttribute("learningData", learningData);
+
         
  
 		return "menu";

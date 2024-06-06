@@ -43,7 +43,7 @@ public interface UserInfoMapper {
 		
 //		public LearningInfo chartTime(String studyTime);
 		
-		List<LearningInfo> getLearningData();
+		List<LearningInfo> getLearningData(Long userId);
 
 		
 }
